@@ -1,6 +1,10 @@
 /* Test Font: " The quick brown fox jumps over the lazy dog " */
 
-/* Importing new Font from: "https://fonts.google.com/" */
+/*
+===================================================================== 
+*   Importing new Font from: "https://fonts.google.com/" 
+=====================================================================  
+*/
 @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 
 
@@ -10,17 +14,16 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit; 
-  /* box-sizing: border-box; */
 }
 
 html {
   box-sizing: border-box;
-  /* font-size: 62.5%;  */
 }
 
 body {
   background-color: #1F243C;
   font-family: 'Bangers', cursive;
+  letter-spacing: 5px;
   font-size: 45px;
   font-weight: 400;
   line-height: 1.6;
@@ -32,12 +35,75 @@ h1 {
 }
 
 /*
-  How to create an image gallery with CSS Grid:
-    ( https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/ )
+===================================================================== 
+*   Button
+=====================================================================  
+*/
+.button {
+  font-size: 36px;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 5px;
+  color: #fff;
+  display: block;
+  float: left;
+  text-decoration: none;
+  letter-spacing: 0;
+  padding: 12px 20px;
+  margin-right: 5px;
+  margin-bottom: 18px;
+  border: none;
+  height: auto;
+  transition: all .2s ease-in-out;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+}
 
-  Note: The height of the rows is tied to the viewport width, so that the cells maintain its 
-        aspect ratio perfectly fine. We have 8 rows each with the height of 5vw (viewport width).
- */
+.button:hover {
+  background: #526091;
+  color: #fff;
+} 
+
+.button:active {
+  background: #526091;
+  color: #fff;
+}
+
+.buttongreen {
+  background: #10A8AB;
+}
+
+.buttonred {
+  background: #E64C65;
+}
+
+.buttonyellow {
+  background: #FCB150;
+}
+
+.buttonblue {
+  background: #4FC4F6;
+}
+
+.button a.last {
+  margin-right: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+
+ /*
+===================================================================== 
+*   How to create an image gallery with CSS Grid:
+*    ( https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/ )
+*
+*   Note: The height of the rows is tied to the viewport width, so that the cells maintain its 
+*         aspect ratio perfectly fine. We have 8 rows each with the height of 5vw (viewport width).
+=====================================================================  
+*/
  .container {
   width: 60%;
   margin: 2rem auto; 
