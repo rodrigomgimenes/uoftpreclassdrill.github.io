@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--- Basic Page Needs
+ 	 ================================================== -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Class Activity - Pre-class Drill">
+	<meta name="author" content="Rodrigo M. Gimenes">
+
+	<title>Class Activities with Javascript and JQuery</title>
+
+	<!-- CSS
+	 ================================================== -->
+    <link rel="stylesheet" href="./css/style-homepage.css" />
+
+    <!-- Favicons
+     ================================================== -->
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
+
+    <!-- JQuery
+     ================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        /*
+        ===================================================================== 
+        *   Button
+        =====================================================================  
+        */
+            .button {
+                /* font: 16px/30px 'opensans-bold', sans-serif; */
+                font-size: 36px;
+                font-family: 'Bangers', cursive;
+                color: #fff;
+                display: block;
+                float: left;
+                text-decoration: none;
+                letter-spacing: 0;
+                padding: 12px 20px;
+                margin-right: 5px;
+                margin-bottom: 18px;
+                border: none;
+                height: auto;
+                transition: all .2s ease-in-out;
+                border-radius: 3px;
+                cursor: pointer;
+                text-align: center;
+                line-height: 50px;
+            }
+
+            .button:hover {
+                background: #3d4145;
+                color: #fff;
+            } 
+
+            .button:active {
+                background: #3d4145;
+                color: #fff;
+            }
+
+            .buttongreen {
+                background: #10A8AB;
+            }
+
+            .buttonred {
+                background: #E64C65;
+            }
+
+            .buttonyellow {
+                background: #FCB150;
+            }
+
+            .buttonblue {
+                background: #4FC4F6;
+            }
+
+            .button a.last {
+                margin-right: 0;
+            }
+
+            .clear {
+                clear: both;
+            }
+    </style>
+</head>
+
+<body id="homepage">
+    <h1>Class Activities with Javascript and JQuery</h1>
+
+    <section id="pseudobutton">
+        <div id="activitybutton">
+             
+            <!-- 
+                Write a function that takes in two numbers and outputs the max (the greater of the two numbers).
+                Ex: 
+                    Input: 1, 2     /   Output: 2
+                    Input: 6, -4    /   Output: 6
+                    Input: 3.4, 2   /   Output: 3.4 
+            -->
+            <p>
+                <a href="#" id="greater-number" class="button buttongreen"><strong>Greater Number</strong></a>
+            </p> 
+
+            <!-- 
+                Write a function that takes in an integer and outputs the sum of all the numbers from 1 to that integer.
+                Ex:
+                    Input: 2    /   Output: 3 (because 1 + 2 = 3)
+                    Input: 4    /   Output: 10  (because 1 + 2 + 3 + 4 = 10)
+                    Input: 10   /   Output: 55
+            -->
+            <p>
+                <a href="#" id="sum-all-numbers" class="button buttonred"><strong>Sum of All the Numbers</strong></a>
+            </p> 
+
+            <!-- 
+                Write a function that takes in an array of numbers and outputs the maximum number.
+                Ex:
+                    Input: [ 1, 2, 3 ]           /   Output: 3
+                    Input: [ 3, 6, 4, 5, 2, 1 ]  /   Output: 6
+                    Input: [ 3, 3, 3 ]           /   Output: 3
+            -->
+            <p>
+                <a href="#" id="find-max-number" class="button buttonyellow"><strong>Find Maximum Number</strong></a>
+            </p> 
+
+            <!-- 
+                Write a function that takes in a string and outputs the number of vowels (not counting y).
+                Ex:
+                    Input: "hello"           /   Output: 2
+                    Input: "you are great!"  /   Output: 6
+                    Input: "why?"            /   Output: 0
+            -->
+            <p>
+                <a href="#" id="number-vowels" class="button buttonblue"><strong>Number of Vowels</strong></a>
+            </p> 
+
+            <!-- 
+                Write a function that takes in a single word as a string and returns true if it's a palindrome and 
+                false otherwise (a palindrome is spelled the same way forwards and backwards).
+                Ex:
+                    Input: "noon"      /   Output: true
+                    Input: "horse"     /   Output: false
+                    Input: "racecar"   /   Output: true
+            -->
+            <p>
+                <a href="#" id="palindrome" class="button buttongreen"><strong>Is a Palindrome?</strong></a>
+            </p> 
+
+            <!-- 
+                Tomato Timer
+            -->
+            <p>
+                <a href="index-timer.html" id="tomato-timer" class="button buttonred last"><strong>Tomato Timer</strong></a>
+            </p> 
+
+            <div class="clear"></div>
+        </div> 
+    </section>
+
+<!--
+    <!-- Using CSS Grids to create an 8x8 grid. -->
+<!--    <div class="container">
+        <div class="gallery">
+            <!-- Inserting Grid Items -->
+<!--            <figure class="gallery__item gallery__item--1">
+                <img src="./images/10a8ab.png" class="gallery__img" alt="Image 1">
+            </figure>
+            <figure class="gallery__item gallery__item--2">
+                <img src="./images/e64c65.png" class="gallery__img" alt="Image 2">
+            </figure>
+            <figure class="gallery__item gallery__item--3">
+                <img src="./images/fcb150.png" class="gallery__img" alt="Image 3">
+            </figure>
+            <figure class="gallery__item gallery__item--4">
+                <img src="./images/4fc4f6.png" class="gallery__img" alt="Image 4">
+            </figure>
+            <figure class="gallery__item gallery__item--5">
+                <img src="./images/e64c65.png" class="gallery__img" alt="Image 5">
+            </figure>
+            <!-- <figure class="gallery__item gallery__item--6">
+                <img src="./images/10a8ab.png" class="gallery__img" alt="Image 6">
+            </figure> -->
+<!--        </div>
+    </div>
+-->
+    <script src="./javascript/script.js"></script>
+</body>
+</h2>
