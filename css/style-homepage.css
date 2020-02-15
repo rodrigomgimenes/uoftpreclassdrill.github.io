@@ -23,7 +23,7 @@ html {
 body {
   background-color: #1F243C;
   font-family: 'Bangers', cursive;
-  letter-spacing: 5px;
+  letter-spacing: 8px;
   font-size: 45px;
   font-weight: 400;
   line-height: 1.6;
@@ -34,6 +34,12 @@ h1 {
   text-align: center;
 }
 
+#activitybutton {
+  width: 90%;
+  margin: 2rem auto; 
+  align-items: center; 
+} 
+
 /*
 ===================================================================== 
 *   Button
@@ -42,22 +48,22 @@ h1 {
 .button {
   font-size: 36px;
   font-family: 'Bangers', cursive;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   color: #fff;
   display: block;
   float: left;
   text-decoration: none;
-  letter-spacing: 0;
+  text-align: center;
   padding: 12px 20px;
-  margin-right: 5px;
-  margin-bottom: 18px;
+  margin-left: 15px;
+  margin-bottom: 15px;
   border: none;
-  height: auto;
   transition: all .2s ease-in-out;
   border-radius: 3px;
   cursor: pointer;
-  text-align: center;
   line-height: 50px;
+  width: 300px;
+  height: 125px;
 }
 
 .button:hover {
