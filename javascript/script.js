@@ -1,11 +1,66 @@
 $( document ).ready( function() {
-
-  // CREATE ELEMENTS OF THE WEBPAGE ( USING JQUERY )
-  //====================================================================
-
-
   // VARIABLES
   // ====================================================================
+  
+  // This object will have the ID and the Text to create a new Element
+  // Just insert an ID and a Name for next activities and the program will do all the work!! =]
+  var activity = {
+
+    elementId: [
+      "tomato-timer",
+      "greater-number",
+      "sum-all-numbers",
+      "find-max-number",
+      "number-vowels",
+      "palindrome"
+    ],
+
+    elementText: [
+      "Tomato Timer",
+      "Greater Number",
+      "Sum of All the Numbers",
+      "Find Maximum Number",
+      "Number of Vowels",
+      "Is a Palindrome?"
+    ],
+
+  }
+
+  // CREATE ELEMENTS OF THE WEBPAGE ( USING JQUERY )
+  //==================================================================== 
+  
+  // Creating new Section
+  var newSection = $( "<section>" );
+  $( "#homepage" ).append( newSection );
+  newSection.attr( "id", "pseudobutton" );
+
+  // Creating new Div
+  var newDiv = $( "<div>" );
+  $( "#pseudobutton" ).append( newDiv );
+  newDiv.attr( "id", "activitybutton" );
+
+  // Creating Paragraphs and A Tags
+  var newP = [ "" ]; 
+  var newA = [ "" ];
+  var elementColor = "buttongreen";
+  activity.elementId.forEach( ( element, index ) => {
+    newP[ index ] = $( "<p>" ); 
+    newA[ index ] = $( "<a>" );
+
+    $( "#activitybutton" ).append( newP[ index ] );
+    newP[ index ].append( newA[ index ] );
+
+    //Get the color of the button (Resto da divisao por 4)
+    elementColor = ( ( index % 4 === 0 ) ? "buttongreen" : ( ( index % 4 === 1 ) ? "buttonred" : ( ( index % 4 === 2 ) ? "buttonyellow" : "buttonblue" ) ) );
+
+    // Check if First element
+    newA[ index ].attr( "href", ( ( index === 0 ) ? "index-timer.html" : "#" ) ).attr( "id", element ).attr( "class", ( ( index === activity.elementId.length-1 ) ? "button " + elementColor + " last" : "button " + elementColor ) );
+    newA[ index ].append( "<strong>" + activity.elementText[ index ] + "</strong>" );
+  });
+
+  var newDiv_Clear = $( "<div>" );
+  $( "#activitybutton" ).append( newDiv_Clear );
+  newDiv_Clear.attr( "class", "clear" );
 
 
   // FUNCTIONS
@@ -19,7 +74,7 @@ $( document ).ready( function() {
       
     var newH1 = $( "<h1>" );
     $( "#homepage" ).append( newH1 );
-      newH1.attr( "id", "title" );
+    newH1.attr( "id", "title" );
     $( "#title" ).append( titleWebPage );
     
   }
