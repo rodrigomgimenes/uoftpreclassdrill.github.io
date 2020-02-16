@@ -110,13 +110,18 @@ $( document ).ready( function() {
     createWebPageTitle ( "Sum of All the Numbers" );
 
     let userNumber = parseInt ( prompt ("Type a number") );
-    let sumOfAll   = userNumber;
 
-    for (let index = userNumber - 1; index > 0; index--) {
-      sumOfAll += index;
+    if ( userNumber.length > 0 ){
+      let sumOfAll = userNumber;
+
+      for (let index = userNumber - 1; index > 0; index--) {
+        sumOfAll += index;
+      }
+
+      alert ( "The sum of all the numbers of [ " + userNumber + " ] is " + sumOfAll);
     }
-
-    alert ( "The sum of all the numbers of [ " + userNumber + " ] is " + sumOfAll);
+    else
+      alert ( "Invalid data! You have to type one number to see the magic." );
   })
 
 
@@ -133,24 +138,27 @@ $( document ).ready( function() {
 
     let userNumbers = prompt ( "Type two or more numbers separated by blank spaces (' ').\n At the end press the OK button to find out the Maximum Number." );
 
-    if (userNumbers.length > 1) {
-      let arrayUserNumbers = userNumbers.split( " " );
+    if ( userNumbers.length > 1 ) {
+      let arrayUserNumbers = userNumbers.split ( " " );
 
       let maximumNumber    = parseInt ( arrayUserNumbers[0] );
       let minimumNumber    = parseInt ( arrayUserNumbers[0] );
 
-      for (let index = 1; index < arrayUserNumbers.length; index++) {
-        maximumNumber = ( maximumNumber < parseInt ( arrayUserNumbers[index] ) ) ? parseInt ( arrayUserNumbers[index] ) : maximumNumber;
-        minimumNumber = ( minimumNumber > parseInt ( arrayUserNumbers[index] ) ) ? parseInt ( arrayUserNumbers[index] ) : minimumNumber;
-      }
+      if ( maximumNumber >= 0 || minimumNumber >= 0 ) {
+        for ( let index = 1; index < arrayUserNumbers.length; index++ ) {
+          maximumNumber = ( maximumNumber < parseInt ( arrayUserNumbers[index] ) ) ? parseInt ( arrayUserNumbers[index] ) : maximumNumber;
+          minimumNumber = ( minimumNumber > parseInt ( arrayUserNumbers[index] ) ) ? parseInt ( arrayUserNumbers[index] ) : minimumNumber;
+        }
 
-      alert ( "The Maximum Number is [ "     + maximumNumber + " ]\n" +
-              "and the Minimum Number is [ " + minimumNumber + " ]"
-            );
+        alert ( "The Maximum Number is [ "     + maximumNumber + " ]\n" +
+                "and the Minimum Number is [ " + minimumNumber + " ]"
+              );
+      }
+      else
+        alert ( "Invalid data! You have to type at least two numbers to amazed." );
     }
-    else {
-      alert ( "Invalid data! You have to type at least two numbers." );
-    }
+    else
+      alert ( "Invalid data! You have to type at least two numbers to amazed." );
   })
 
 
@@ -164,6 +172,26 @@ $( document ).ready( function() {
   $( "#number-vowels" ).on( "click", () => {
     // Creating Webpage Title
     createWebPageTitle ( "Number of Vowels" );
+
+    let userString = prompt ( "Type a word or a sentence and press the OK button to find out the number of vowels (not counting 'Y')." );
+
+    if ( userString.length > 0 ){
+      let countVowels = 0;
+
+      for ( let index = 0; index < userString.length; index++ ) {
+        if ( userString.toLowerCase().charAt ( index ) === "a" || 
+             userString.toLowerCase().charAt ( index ) === "e" ||
+             userString.toLowerCase().charAt ( index ) === "i" || 
+             userString.toLowerCase().charAt ( index ) === "o" || 
+             userString.toLowerCase().charAt ( index ) === "u"  
+           )
+          countVowels++;
+      }
+
+      alert ( "The total Number of Vowels is [ " + countVowels + " ]" );
+    }
+    else
+      alert ( "Invalid data! You have to type at least one word to be gawping." );
   })
 
 
