@@ -89,12 +89,12 @@ $( document ).ready( function() {
    */
   $( "#greater-number" ).on( "click", () => {
     // Creating Webpage Title
-    createWebPageTitle( "Greater Number" );
+    createWebPageTitle ( "Greater Number" );
 
-    let fNumber = prompt("Type the first number");
-    let sNumber = prompt("Type the second number");
+    let fNumber = prompt ( "Type the first number" );
+    let sNumber = prompt ( "Type the second number" );
 
-    alert( ( fNumber > sNumber ) ? fNumber + " is greater than " + sNumber : ( fNumber < sNumber ) ? fNumber + " is smaller than " + sNumber : fNumber + " is equal to " + sNumber);
+    alert( ( fNumber > sNumber ) ? fNumber + " is GREATER than " + sNumber : ( fNumber < sNumber ) ? fNumber + " is SMALLER than " + sNumber : fNumber + " is EQUAL to " + sNumber);
   })
 
 
@@ -107,10 +107,10 @@ $( document ).ready( function() {
   */
   $( "#sum-all-numbers" ).on( "click", () => {
     // Creating Webpage Title
-    createWebPageTitle( "Sum of All the Numbers" );
+    createWebPageTitle ( "Sum of All the Numbers" );
 
-    let userNumber = parseInt ( prompt("Type a number") );
-    let sumOfAll = userNumber;
+    let userNumber = parseInt ( prompt ("Type a number") );
+    let sumOfAll   = userNumber;
 
     for (let index = userNumber - 1; index > 0; index--) {
       sumOfAll += index;
@@ -129,7 +129,28 @@ $( document ).ready( function() {
   */
   $( "#find-max-number" ).on( "click", () => {
     // Creating Webpage Title
-    createWebPageTitle( "Find Maximum Number" );
+    createWebPageTitle ( "Find Maximum Number" );
+
+    let userNumbers = prompt ( "Type two or more numbers separated by blank spaces (' ').\n At the end press the OK button to find out the Maximum Number." );
+
+    if (userNumbers.length > 1) {
+      let arrayUserNumbers = userNumbers.split( " " );
+
+      let maximumNumber    = parseInt ( arrayUserNumbers[0] );
+      let minimumNumber    = parseInt ( arrayUserNumbers[0] );
+
+      for (let index = 1; index < arrayUserNumbers.length; index++) {
+        maximumNumber = ( maximumNumber < parseInt ( arrayUserNumbers[index] ) ) ? parseInt ( arrayUserNumbers[index] ) : maximumNumber;
+        minimumNumber = ( minimumNumber > parseInt ( arrayUserNumbers[index] ) ) ? parseInt ( arrayUserNumbers[index] ) : minimumNumber;
+      }
+
+      alert ( "The Maximum Number is [ "     + maximumNumber + " ]\n" +
+              "and the Minimum Number is [ " + minimumNumber + " ]"
+            );
+    }
+    else {
+      alert ( "Invalid data! You have to type at least two numbers." );
+    }
   })
 
 
@@ -142,7 +163,7 @@ $( document ).ready( function() {
   */
   $( "#number-vowels" ).on( "click", () => {
     // Creating Webpage Title
-    createWebPageTitle( "Number of Vowels" );
+    createWebPageTitle ( "Number of Vowels" );
   })
 
 
@@ -156,7 +177,7 @@ $( document ).ready( function() {
   */
   $( "#palindrome" ).on( "click", () => {
     // Creating Webpage Title
-    createWebPageTitle( "Is a Palindrome?" );
+    createWebPageTitle ( "Is a Palindrome?" );
   })
 
 
