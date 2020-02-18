@@ -47,6 +47,13 @@ $( document ).ready( function() {
       "to be jolly."
     ],
 
+    buttoncolor: [
+      "buttongreen",
+      "buttonred",
+      "buttonyellow",
+      "buttonblue"
+    ],
+
   }
 
   // CREATE ELEMENTS OF THE WEBPAGE ( USING JQUERY )
@@ -65,7 +72,7 @@ $( document ).ready( function() {
   // Creating Paragraphs and A Tags
   var newP = [ "" ]; 
   var newA = [ "" ];
-  var elementColor = "buttongreen";
+  var elementColor = "";
   activity.elementId.forEach( ( element, index ) => {
     newP[ index ] = $( "<p>" ); 
     newA[ index ] = $( "<a>" );
@@ -73,8 +80,10 @@ $( document ).ready( function() {
     $( "#activitybutton" ).append( newP[ index ] );
     newP[ index ].append( newA[ index ] );
 
-    //Get the color of the button (Resto da divisao por 4)
+    //Get the color of the button (Rest of division by 4)
     elementColor = ( ( index % 4 === 0 ) ? "buttongreen" : ( ( index % 4 === 1 ) ? "buttonred" : ( ( index % 4 === 2 ) ? "buttonyellow" : "buttonblue" ) ) );
+    //Get the color of the button randomly
+    // elementColor = activity.buttoncolor [ Math.floor( Math.random() * (activity.buttoncolor.length) ) ];
 
     // Check if First element
     newA[ index ].attr( "href", ( ( index === 0 ) ? "index-timer.html" : "#" ) ).attr( "id", element ).attr( "class", ( ( index === activity.elementId.length-1 ) ? "button " + elementColor + " last" : "button " + elementColor ) );
@@ -144,7 +153,7 @@ $( document ).ready( function() {
       alert ( "The sum of all the numbers of [ " + userNumber + " ] is " + sumOfAll);
     }
     else
-      alert ( "Invalid data! You have to type 1 ( one ) number " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+      alert ( "Invalid data! You have to type 1 ( one ) number " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
   })
 
 
@@ -178,10 +187,10 @@ $( document ).ready( function() {
               );
       }
       else
-        alert ( "Invalid data! You have to type at least 2 ( two ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+        alert ( "Invalid data! You have to type at least 2 ( two ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
     }
     else
-      alert ( "Invalid data! You have to type at least 2 ( two ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+      alert ( "Invalid data! You have to type at least 2 ( two ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
   })
 
 
@@ -214,7 +223,7 @@ $( document ).ready( function() {
       alert ( "The total Number of Vowels is [ " + countVowels + " ]" );
     }
     else
-      alert ( "Invalid data! You have to type at least 1 ( one ) word " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+      alert ( "Invalid data! You have to type at least 1 ( one ) word " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
   })
 
 
@@ -244,7 +253,7 @@ $( document ).ready( function() {
       alert ( !isPalindrome ? "[ " + userPalindrome + " ] is NOT a Palidrome." : "[ " + userPalindrome + " ] is a Palidrome." );
     }
     else
-      alert ( "Invalid data! You have to type at least 1 ( one ) word " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+      alert ( "Invalid data! You have to type at least 1 ( one ) word " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
   })
 
 
@@ -280,7 +289,7 @@ $( document ).ready( function() {
     alert ( primeNumbers + "]" );
   }
   else
-    alert ( "Invalid data! You have to type a number greater than 0 ( zero ) " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+    alert ( "Invalid data! You have to type a number greater than 0 ( zero ) " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
 })
 
 
@@ -303,7 +312,7 @@ $( document ).ready( function() {
     alert ( "The Factorial Number of [ " + userNumber + " ] is: " + factorial );
   }
   else
-    alert ( "Invalid data! You have to type a number greater than 0 ( zero ) " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+    alert ( "Invalid data! You have to type a number greater than 0 ( zero ) " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
 })
 
 
@@ -332,7 +341,7 @@ $( document ).ready( function() {
     alert ( "The Fibonacci Series is [  " + fibNum + "]" );
   }
   else
-    alert ( "Invalid data! You have to type a number greater than 1 ( one ) " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+    alert ( "Invalid data! You have to type a number greater than 1 ( one ) " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
 })
 
 
@@ -370,7 +379,7 @@ $( document ).ready( function() {
     alert ( "[ " + firstString + " ] and [ " + secondString + " ] are " + ( !status ? "NOT Anagrams." : "Anagrams." ) );
   } 
   else
-    alert ( "Invalid data! You have to type 2 ( two ) words or sentences " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+    alert ( "Invalid data! You have to type 2 ( two ) words or sentences " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
 })
 
 
@@ -402,7 +411,7 @@ $( document ).ready( function() {
     alert ( "The number [ " + armstrongNumber + " ] is " + ( ( armstrongNumber === result ) ? "an Armstrong Number." : "NOT an Armstrong Number." ) );
   }
   else
-    alert ( "Invalid data! You have to type a 3 ( three ) digit number " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+    alert ( "Invalid data! You have to type a 3 ( three ) digit number " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
 })
 
 
@@ -433,7 +442,7 @@ console.log(firstSide); console.log(secondSide); console.log(thirdSide);
       alert ( "[ " + firstSide + " ], [ " + secondSide + " ] and [ " + thirdSide + "] are NOT a valid Triangle." );
   } 
   else
-    alert ( "Invalid data! You have to type 3 ( three ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+    alert ( "Invalid data! You have to type 3 ( three ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length) ) ] );
 })
 
 
