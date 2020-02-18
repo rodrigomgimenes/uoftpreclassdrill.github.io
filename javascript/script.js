@@ -17,7 +17,8 @@ $( document ).ready( function() {
       "factorial-number",
       "fibonacci-sequence",
       "anagram",
-      "armstrong-number"
+      "armstrong-number",
+      "triangle"
     ],
 
     elementText: [
@@ -31,7 +32,8 @@ $( document ).ready( function() {
       "Factorial Number",
       "Fibonacci Sequence",
       "Is an Anagram?",
-      "Is an Armstrong Number?"
+      "Is an Armstrong Number?",
+      "Is a Triangle?"
     ],
 
     phrases: [
@@ -365,7 +367,7 @@ $( document ).ready( function() {
         status = false;
     }
 
-    alert ( "[ " + firstString + " ] and [ " + secondString + "] are " + ( !status ? "NOT Anagrams." : "Anagrams." ) );
+    alert ( "[ " + firstString + " ] and [ " + secondString + " ] are " + ( !status ? "NOT Anagrams." : "Anagrams." ) );
   } 
   else
     alert ( "Invalid data! You have to type 2 ( two ) words or sentences " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
@@ -401,6 +403,37 @@ $( document ).ready( function() {
   }
   else
     alert ( "Invalid data! You have to type a 3 ( three ) digit number " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
+})
+
+
+ /* 
+  *  Write a function that takes in a 3 numbers and returns if it's a valid triangle
+  *  Ex:
+  *      Input: "3  4  5"    /   Output: "It's a valid Triangle"
+  *      Input: "1  2  10"   /   Output: "It's NOT a valid Triangle"
+  */
+ $( "#" + activity.elementId [ 11 ] ).on( "click", () => {
+  // Creating Webpage Title
+  createWebPageTitle ( activity.elementText[ 11 ] );
+
+  let firstSide  = parseInt ( prompt ( "Type the size of the first side of the triangle."  ) );
+  let secondSide = parseInt ( prompt ( "Type the size of the second side of the triangle." ) );
+  let thirdSide  = parseInt ( prompt ( "Type the size of the third side of the triangle."  ) );
+  
+console.log(firstSide); console.log(secondSide); console.log(thirdSide);
+
+  if ( ( firstSide >= 0 ) && ( secondSide >= 0 ) && ( thirdSide >= 0 ) ) {
+    
+    if ( ( ( firstSide  + secondSide ) > thirdSide  ) && 
+         ( ( firstSide  + thirdSide  ) > secondSide ) && 
+         ( ( secondSide + thirdSide  ) > firstSide  ) 
+       )
+       alert ( "[ " + firstSide + " ], [ " + secondSide + " ] and [ " + thirdSide + "] are a valid Triangle." );
+    else 
+      alert ( "[ " + firstSide + " ], [ " + secondSide + " ] and [ " + thirdSide + "] are NOT a valid Triangle." );
+  } 
+  else
+    alert ( "Invalid data! You have to type 3 ( three ) numbers " + activity.phrases [ Math.floor( Math.random() * (activity.phrases.length - 1) ) ] );
 })
 
 
