@@ -40,7 +40,7 @@ $(document).ready(function() {
 
         if ( parseInt ( timer ) === 0 ) {
           if ( parseInt ( currentMinute ) === 0 )
-            console.log("EMERGENCY STOP!!!")
+            clearInterval(internal);// console.log("EMERGENCY STOP!!!")
 
           subMinute = true;
           timer = 60;
